@@ -10,7 +10,6 @@ O sistema foi projetado para apoiar a organização e a publicação dos editais
 
 - **Arthur Hugo Alves Lima** — Sistemas e Mídias Digitais, UFC  
 - **Lina dos Santos Martins** — Sistemas e Mídias Digitais, UFC  
-- **Joao Andre Simoes Pessoa** — Sistemas e Mídias Digitais, UFC  
 - **Joao Pedro Mesquita Abreu** — Sistemas e Mídias Digitais, UFC  
 - **Sofia Leandra Da Silva Viana** — Sistemas e Mídias Digitais, UFC  
 
