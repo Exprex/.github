@@ -47,6 +47,22 @@ O sistema foi projetado para apoiar a organização e a publicação dos editais
 | RF15 | Ordenar por data de publicação  | Como visitante, quero que os editais mais recentes apareçam primeiro para acompanhar as novidades sem precisar vasculhar tudo.                    |
 
 ---
+## Requisitos Funcionais
+
+| ID   | Título                     | Backend                                                            | Frontend                                                                | Comunicação (API)                                                         | Prioridade      |
+| ---- | -------------------------- | ------------------------------------------------------------------ | ----------------------------------------------------------------------- | ------------------------------------------------------------------------- | --------------- |
+| RF01 | Upload de edital (PDF)     | Rota POST com Multer; renomear arquivo; salvar nome e descrição no banco| Formulário com campo de arquivo e descrição                       |`POST /upload` com `multipart/form-data`                                    | Alta Prioridade |
+| RF02 | Listar editais enviados             | Rota GET que busca todos os editais no banco (ordem decrescente)                                | Lista em cards com nome, descrição, botão abrir e botão excluir                                          | `GET /`                                                             | Alta Prioridade |
+| RF03 | Acessar PDF no navegador           | Arquivo é servido via rota estática do Express                           | Link "Abrir PDF" abre nova aba                                             | `/uploads/:nome_do_arquivo`                                                         | Alta Prioridade |
+| RF04 | Excluir imagem             | Rota POST que apaga do banco e remove o arquivo da pasta                         | Botão "Excluir" com confirmação                                                         | `POST /delete/:id`                                                        | Alta Prioridade |
+| RF05 | Validar uploads            | Middleware do Multer para aceitar só PDF e limitar para 10MB               | Alerta de erro simples (resposta do servidor)                                | Retorno HTTP 400 com mensagem                                          | Alta Prioridade |
+| RF06 | Servir arquivos estáticos  | Express serve as pastas `public/` (CSS) e `uploads/` (PDFs)                     | Interface com CSS simples (opcional: `public/style.css`)                              | N/A (arquivos acessados direto pelo navegador)                          | Alta Prioridade |
+| RF07 | Tratar erros do sistema        | Middleware final trata erros do Multer e do sistema              | Exibe mensagem de erro direto na tela (texto simples)                       | Mensagens como: "Arquivo muito grande" ou "Erro ao salvar no banco"                 | Alta Prioridade |
+| RF08 | Armazenar no PostgreSQL  | Conexão com banco via `pg.Pool`; inserção e exclusão com SQL        | N/A                                    | Banco usado internamente pelas rotas                                         | Alta Prioridade |
+| RF09 | Interface amigável           | N/A                          | Formulário centralizado e cards organizados para listagem dos editais                                             | N/A | Alta Prioridade |
+
+
+
 
 ## 🛠 Tecnologias
 
