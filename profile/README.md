@@ -47,19 +47,20 @@ O sistema foi projetado para apoiar a organização e a publicação dos editais
 | RF15 | Ordenar por data de publicação  | Como visitante, quero que os editais mais recentes apareçam primeiro para acompanhar as novidades sem precisar vasculhar tudo.                    |
 
 ---
-## Requisitos Funcionais
+## ✅ Requisitos Funcionais
 
 | ID   | Título                     | Backend                                                            | Frontend                                                                | Comunicação (API)                                                         | Prioridade      |
 | ---- | -------------------------- | ------------------------------------------------------------------ | ----------------------------------------------------------------------- | ------------------------------------------------------------------------- | --------------- |
 | RF01 | Abrir modal de projeto     |N/A |Clique em "Ver mais" exibe modal com informações detalhadas| N/A |Alta Prioridade
-| RF02 | Listar editais enviados             | Rota GET que busca todos os editais no banco (ordem decrescente)                                | Lista em cards com nome, descrição, botão abrir e botão excluir                                          | `GET /`                                                             | Alta Prioridade |
-| RF03 | Acessar PDF no navegador           | Arquivo é servido via rota estática do Express                           | Link "Abrir PDF" abre nova aba                                             | `/uploads/:nome_do_arquivo`                                                         | Alta Prioridade |
-| RF04 | Excluir imagem             | Rota POST que apaga do banco e remove o arquivo da pasta                         | Botão "Excluir" com confirmação                                                         | `POST /delete/:id`                                                        | Alta Prioridade |
-| RF05 | Validar uploads            | Middleware do Multer para aceitar só PDF e limitar para 10MB               | Alerta de erro simples (resposta do servidor)                                | Retorno HTTP 400 com mensagem                                          | Alta Prioridade |
-| RF06 | Servir arquivos estáticos  | Express serve as pastas `public/` (CSS) e `uploads/` (PDFs)                     | Interface com CSS simples (opcional: `public/style.css`)                              | N/A (arquivos acessados direto pelo navegador)                          | Alta Prioridade |
-| RF07 | Tratar erros do sistema        | Middleware final trata erros do Multer e do sistema              | Exibe mensagem de erro direto na tela (texto simples)                       | Mensagens como: "Arquivo muito grande" ou "Erro ao salvar no banco"                 | Alta Prioridade |
-| RF08 | Armazenar no PostgreSQL  | Conexão com banco via `pg.Pool`; inserção e exclusão com SQL        | N/A                                    | Banco usado internamente pelas rotas                                         | Alta Prioridade |
-| RF09 | Interface amigável           | N/A                          | Formulário centralizado e cards organizados para listagem dos editais                                             | N/A | Alta Prioridade |
+| RF02 | Fechar modal ao clicar fora ou ESC            | N/A                               | Modal se fecha ao clicar fora ou pressionar tecla ESC                                         | N/A                                                             | Alta Prioridade |
+| RF03 | Abrir modal de login           | N/A                          | Clique em "Área Administrativa" abre modal de login                                            | N/A                                                        | Alta Prioridade |
+| RF04 | Alternar entre login e cadastro             | N/A                       | Botões "Já tem conta?" e "Criar conta" alternam telas dentro do modal      | N/A                                             | Média Prioridade |
+| RF05 | Simular autenticação (login)            | N/A (simulado via browser)               | Salvar login no localStorage após clique em "Entrar"                                | N/A                                          | Alta Prioridade |
+| RF06 | Redirecionar após login  | N/A                     | Após login, redireciona para inicial.html                              | N/A                         | Alta Prioridade |
+| RF07 | Proteger acesso ao painel        | N/A              | Página inicial.html verifica se usuário está logado no localStorage                       | N/A                 | Alta Prioridade |
+| RF08 | Logout do sistema | N/A        | N/A                                    | Botão "Sair" limpa localStorage e redireciona para index.html                                         | Alta Prioridade |
+| RF10 | Destaque visual nos botões           | N/A                          | hover muda cor de fundo dos botões para reforçar ação do usuário                                             | N/A | Média Prioridade |
+| RF11 | Proteger acesso via localStorage           | N/A                          | Verifica se logado está em localStorage, senão redireciona para index.html                                            | N/A | Alta Prioridade |
 
 
 
